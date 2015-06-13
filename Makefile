@@ -8,5 +8,5 @@ simplejson:
 	$(HC) $(OBJ) src/SimpleJSON.hs -o lib/SimpleJSON.o
 
 clean:
-		rm -rf bin
-		mkdir bin
+	rm -rf bin
+	mkdir bin
