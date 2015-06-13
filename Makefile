@@ -7,7 +7,6 @@ main: simplejson
 	mkdir -p bin
 	$(HC) -o bin/SimpleJSON lib/SimpleJSON.o
 
-
 simplejson:
 	mkdir -p lib
 	$(HC) $(OBJ) src/SimpleJSON.hs -o lib/SimpleJSON.o
