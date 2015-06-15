@@ -27,18 +27,18 @@ getString (JSONString s) = Just s
 getString _              = Nothing
 
 getInt (JSONNumber n) = Just (truncate n)
-getInt _           = Nothing
+getInt _              = Nothing
 
 getDouble (JSONNumber n) = Just n
-getDouble _           = Nothing
+getDouble _              = Nothing
 
 getBool (JSONBool b) = Just b
-getBool _         = Nothing
+getBool _            = Nothing
 
 getObject (JSONObject o) = Just o
-getObject _           = Nothing
+getObject _              = Nothing
 
 getArray (JSONArray a) = Just a
-getArray _          = Nothing
+getArray _             = Nothing
 
-isNull v            = v == JSONNull
+isNull v               = v == JSONNull
