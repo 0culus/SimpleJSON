@@ -1,5 +1,7 @@
 -- from ch05 of Real World Haskell
 -- SimpleJSON.hs
+{-# LANGUAGE RankNTypes #-}
+
 module SimpleJSON
     (
       JSONValue(..)
@@ -26,6 +28,7 @@ getString :: JSONValue -> Maybe String
 getString (JSONString s) = Just s
 getString _              = Nothing
 
+getInt :: forall a. Integral a => JSONValue -> Maybe a
 getInt (JSONNumber n) = Just (truncate n)
 getInt _              = Nothing
 
