@@ -5,7 +5,7 @@ all: main simplejson
 
 main: simplejson
 	mkdir -p bin
-	$(HC) -o bin/SimpleJSON src/Main.hs lib/SimpleJSON.o
+	$(HC) src/Main.hs lib/SimpleJSON.o -o bin/SimpleJSON
 
 simplejson:
 	mkdir -p lib
