@@ -29,16 +29,21 @@ getString _              = Nothing
 getInt (JSONNumber n) = Just (truncate n)
 getInt _              = Nothing
 
+getDouble :: JSONValue -> Maybe Double
 getDouble (JSONNumber n) = Just n
 getDouble _              = Nothing
 
+getBool :: JSONValue -> Maybe Bool
 getBool (JSONBool b) = Just b
 getBool _            = Nothing
 
+getObject :: JSONValue -> Maybe [(String, JSONValue)]
 getObject (JSONObject o) = Just o
 getObject _              = Nothing
 
+getArray :: JSONValue -> Maybe [JSONValue]
 getArray (JSONArray a) = Just a
 getArray _             = Nothing
 
+isNull :: JSONValue -> Bool
 isNull v               = v == JSONNull
