@@ -1,6 +1,8 @@
 -- from ch05 of Real World Haskell
 -- PrettyStub.hs
-import SimpleJSON
+import           Data.Bits
+import           Numeric    (showHex)
+import           SimpleJSON
 
 data Doc = ToBeDefined
          deriving (Show)
@@ -22,3 +24,4 @@ char c = undefined
 
 hcat :: [Doc] -> Doc
 hcat xs = undefined
+
