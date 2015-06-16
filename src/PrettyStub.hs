@@ -1,4 +1,5 @@
--- file: ch05/PrettyStub.hs
+-- from ch05 of Real World Haskell
+-- PrettyStub.hs
 import SimpleJSON
 
 data Doc = ToBeDefined
