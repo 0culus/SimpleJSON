@@ -3,7 +3,8 @@
 
 module Main where
 
-import SimpleJSON
+import           PutJSON
+import           SimpleJSON
 
 main :: IO ()
 main = print (JSONObject [("foo", JSONNumber 1), ("bar", JSONBool False)])
