@@ -1,5 +1,5 @@
 -- from ch05 of Real World Haskell
--- PrettyStub.hs
+-- Prettify.hs
 import           Data.Bits
 import           Numeric    (showHex)
 import           SimpleJSON
@@ -25,3 +25,5 @@ char c = undefined
 hcat :: [Doc] -> Doc
 hcat xs = undefined
 
+fsep :: [Doc] -> Doc
+fsep xs = undefined
