@@ -18,9 +18,6 @@ empty = Empty
 line :: Doc
 line = Line
 
-string :: String -> Doc
-string str = undefined
-
 text :: String -> Doc
 text ""     = Empty
 text str    = Text str

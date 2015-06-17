@@ -25,8 +25,8 @@ renderJSONValue (JSONObject alist)  = series '{' '}' field alist
                                     <> text ": "
                                     <> renderJSONValue val
 
-prettyPrintString :: String -> Doc
-prettyPrintString = enclose '"' '"' . hcat . map oneChar
+string :: String -> Doc
+string = enclose '"' '"' . hcat . map oneChar
 
 -- helpers for pretty printing a string
 enclose :: Char -> Char -> Doc -> Doc
