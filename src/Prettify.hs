@@ -1,7 +1,8 @@
 -- from ch05 of Real World Haskell
 -- Prettify.hs
+module Prettify where
 
-import           SimpleJSON
+import SimpleJSON
 
 data Doc = Empty
          | Char Char
