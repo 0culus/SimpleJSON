@@ -1,10 +1,17 @@
 -- from ch05 of Real World Haskell
 -- PrettyJSON.hs
 
-module PrettyJSON where
+module PrettyJSON
+    (
+        renderJSONValue
+    ) where
 
-import           PrettyStub
-import           SimpleJSON
+import           Data.Bits  (shiftR, (.&.))
+import           Data.Char  (ord)
+import           Numeric    (showHex)
+import           Prettify   (Doc, char, compact, double, fsep, hcat, pretty,
+                             punctuate, text, (<>))
+import           SimpleJSON (JSONValue (..))
 
 renderJSONValue :: JSONValue -> Doc
 renderJSONValue (JSONBool True)     = text "true"
@@ -12,6 +19,11 @@ renderJSONValue (JSONBool False)    = text "false"
 renderJSONValue JSONNull            = text "null"
 renderJSONValue (JSONNumber num)    = double num
 renderJSONValue (JSONString str)    = string str
+renderJSONValue (JSONArray arr)     = series '[' ']' renderJSONValue arr
+renderJSONValue (JSONObject alist)  = series '{' '}' field alist
+    where field (name,val)          = string name
+                                    <> text ": "
+                                    <> renderJSONValue val
 
 prettyPrintString :: String -> Doc
 prettyPrintString = enclose '"' '"' . hcat . map oneChar

@@ -1,7 +1,6 @@
 -- from ch05 of Real World Haskell
 -- Prettify.hs
-import           Data.Bits
-import           Numeric    (showHex)
+
 import           SimpleJSON
 
 data Doc = ToBeDefined
@@ -27,3 +26,8 @@ hcat xs = undefined
 
 fsep :: [Doc] -> Doc
 fsep xs = undefined
+
+punctuate :: Doc -> [Doc] -> [Doc]
+punctuate p []      = []
+punctuate p [d]     = [d]
+punctuate p (d:ds)  = (d <> p) : punctuate p ds
