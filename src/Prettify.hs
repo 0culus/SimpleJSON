@@ -46,7 +46,7 @@ fsep :: [Doc] -> Doc
 fsep xs = undefined
 
 (</>) :: Doc -> Doc -> Doc
-x </> y = x <> softLine <> any
+x </> y = x <> softLine <> y
 
 softLine :: Doc
 softLine = group Line
@@ -55,7 +55,7 @@ group :: Doc -> Doc
 group x = flatten x `Union` x
 
 flatten :: Doc -> Doc
-flatten (x `Concat` y)      = flatten x `Concat` flatten any
+flatten (x `Concat` y)      = flatten x `Concat` flatten y
 flatten Line                = Char ' '
 flatten (x `Union` _)       = flatten x
 flatten other               = other
