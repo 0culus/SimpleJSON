@@ -25,6 +25,8 @@ text str    = Text str
 double :: Double -> Doc
 double num = text (show num)
 
+-- takes a Doc and yields a function of type Doc -> Doc, i.e.
+-- takes a Doc and returns a Doc
 (<>) :: Doc -> Doc -> Doc
 Empty <> b      = b
 a <> Empty      = a
@@ -33,15 +35,21 @@ a <> b          = a `Concat` b
 char :: Char -> Doc
 char = Char
 
+-- Takes a list of Doc and returns a Doc
 hcat :: [Doc] -> Doc
 hcat = fold (<>)
 
+-- Takes any function of type (Doc -> Doc -> Doc) and yields
+-- a function that takes a list of Doc and returns a Doc
 fold :: (Doc -> Doc -> Doc) -> [Doc] -> Doc
 fold f = foldr f empty
 
+-- takes a list of Doc and returns a Doc
 fsep :: [Doc] -> Doc
 fsep xs = undefined
 
+-- takes a Doc and yields a function of type Doc -> Doc, i.e.
+-- takes a Doc and returns a Doc
 (</>) :: Doc -> Doc -> Doc
 x </> y = x <> softLine <> y
 
