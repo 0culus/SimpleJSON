@@ -1,7 +1,10 @@
 -- from ch05 of Real World Haskell
 -- PutJSON.hs
 
-module PutJSON where
+module PutJSON
+    (
+        putJSONValue
+    ) where
 
 import           Data.List  (intercalate)
 import           SimpleJSON
