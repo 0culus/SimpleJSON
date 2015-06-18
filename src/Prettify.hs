@@ -4,6 +4,8 @@ module Prettify where
 
 import           SimpleJSON ()
 
+-- we store Doc as an algebraic type. Note that this is actually
+-- a tree structure
 data Doc = Empty
          | Char Char
          | Text String
@@ -65,6 +67,9 @@ flatten Line                = Char ' '
 flatten (x `Union` _)       = flatten x
 flatten other               = other
 
+-- takes a Doc and yields a function of type [Doc] -> [Doc],
+-- which of course takes a list of Doc and returns a list
+-- of Doc
 punctuate :: Doc -> [Doc] -> [Doc]
 punctuate p []      = []
 punctuate p [d]     = [d]
