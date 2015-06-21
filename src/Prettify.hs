@@ -110,3 +110,11 @@ w `fits` _ | w < 0 = False
 w `fits` ""        = True
 w `fits` ('\n':_)  = True
 w `fits` (c:cs)    = (w - 1) `fits` cs
+
+-- Exercise 1:
+fill :: Int -> Doc -> Doc
+fill xs = undefined
+
+-- Exercise 2:
+nest :: Int -> Doc -> Doc
+nest xs = undefined
