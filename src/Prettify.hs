@@ -94,7 +94,7 @@ pretty width x = best 0 [x]
               case d of
                 Empty           -> best col ds
                 Char c          -> c : best (col + 1) ds
-                Text safe       -> s ++ best (col + length s) ds
+                Text s       -> s ++ best (col + length s) ds
                 Line            -> '\n' : best 0 ds
                 a `Concat` b    -> best col (a:b:ds)
                 a `Union` b     -> nicest col (best col (a:ds))
