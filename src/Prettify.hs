@@ -48,7 +48,7 @@ fold f = foldr f empty
 
 -- takes a list of Doc and returns a Doc
 fsep :: [Doc] -> Doc
-fsep xs = undefined
+fsep = fold (<>)
 
 -- takes a Doc and yields a function of type Doc -> Doc, i.e.
 -- takes a Doc and returns a Doc
