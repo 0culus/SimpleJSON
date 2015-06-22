@@ -28,10 +28,13 @@ double :: Double -> Doc
 double num = text (show num)
 
 -- takes a Doc and yields a function of type Doc -> Doc, i.e.
--- takes a Doc and returns a Doc
+-- takes a Doc and returns a Doc. Analagous to (++), but for
+-- concatenating Doc values
 (<>) :: Doc -> Doc -> Doc
-Empty <> b      = b
+Empty <> b      = b -- note Empty is the identity under concatenation
 a <> Empty      = a
+-- this way, we ensure that nothing happens if one or the other
+-- arg is empty
 a <> b          = a `Concat` b
 
 char :: Char -> Doc
