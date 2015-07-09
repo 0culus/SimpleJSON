@@ -118,6 +118,9 @@ w `fits` (c:cs)    = (w - 1) `fits` cs
 -- It should add spaces to a document until it is the given number of columns wide. If it is
 -- already wider than this value, it should add no spaces. [Also refer to the comments on the
 -- web version of the book.]
+--
+-- There also seems to be some discrepancy in the signatures of the following two exercises
+-- between the web and book versions.
 fill :: Int -> Doc -> Doc
 fill xs = undefined
 
