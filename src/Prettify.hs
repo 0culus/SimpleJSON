@@ -115,9 +115,15 @@ w `fits` ('\n':_)  = True
 w `fits` (c:cs)    = (w - 1) `fits` cs
 
 -- Exercise 1:
+-- It should add spaces to a document until it is the given number of columns wide. If it is
+-- already wider than this value, it should add no spaces. [Also refer to the comments on the
+-- web version of the book.]
 fill :: Int -> Doc -> Doc
 fill xs = undefined
 
 -- Exercise 2:
+-- Our pretty printer does not take nesting into account. Whenever we open parentheses, braces,
+-- or brackets, any lines that follow should be indented so that they are aligned with the
+-- opening character until a matching closing character is encountered.
 nest :: Int -> Doc -> Doc
 nest xs = undefined
