@@ -18,6 +18,7 @@ cabal.sandbox.config
 
 ## Directory-based project format:
 .idea/
+.stack-work/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
